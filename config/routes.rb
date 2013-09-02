@@ -1,4 +1,9 @@
 SampleApp::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
+  resources :items
+
+
   resources :users
 
   resources :sessions, only:[:new, :create, :destroy]
@@ -11,6 +16,7 @@ SampleApp::Application.routes.draw do
   match '/help', to: 'static_pages#help'
   match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
