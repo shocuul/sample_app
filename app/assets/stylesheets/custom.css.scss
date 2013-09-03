@@ -13,13 +13,24 @@ $grayMediumLight: #eaeaea;
   box-sizing: border-box;
 }
 
+@mixin background_size{
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+}
+
 /* universal */
 
 html{
-	overflow-y: scroll; 
+	overflow-y: scroll;
+	padding-top:1cm; 
 }
 
 body{
+	background-image: image-url("background.jpg");
+	@include background_size;
 	padding-top: 60px;
 }
 
@@ -42,6 +53,7 @@ textarea{
 
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1;
+	color: FFF;
 }
 
 h1{
@@ -61,11 +73,31 @@ h2 {
 }
 
 p {
+
 	font-size: 1.1em;
 	line-height: 1.7em;
 }
-
 /* header */
+.navbar-inverse .navbar-inner {
+  background-color: rgba(15,15,15,0.8);
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
+  margin: 0 auto;
+  height: 58px;
+}
+
+.navbar .pull-right{
+	padding-top: 10px;
+	font-size: 15px;
+}
+
+
+
+
+/* Item Custom */
+
+
 
 #logo {
 	float: left;
@@ -74,7 +106,7 @@ p {
 	color: #fff;
 	text-transform: uppercase;;
 	letter-spacing: -1px;
-	padding-top: 9px;
+	padding-top: 2px;
 	font-weight: bold;
 	line-height: 1;
 	&:hover{
