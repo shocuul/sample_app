@@ -1,6 +1,17 @@
-<h1>Listing items</h1>
+<div class="row" id="items">
+<h1>Items</h1>
+<%= link_to 'New Item',new_item_path, class: "btn" %>
+<ul id="item-list">
+<% @items.each do |item| %>
+<li>
+<%= link_to (image_tag item.image.url(:medium)+"#{item.name}",class:'img-circle'), item %>
+</li>
 
-<table class="table table-hover">
+<% end %>
+</ul>
+<!--
+<table class="table">
+
   <tr>
     <th>Name</th>
     <th>Cost</th>
@@ -11,18 +22,24 @@
   </tr>
 
 <% @items.each do |item| %>
+  <th>
   <tr> 
-    <td><%= image_tag item.image.url(:medium) %></td>
+    <td><%= image_tag item.image.url(:medium), class:'img-circle'%></td>
     <td><%= item.name %></td>
+    <th>
+    <!--
     <td><%= item.cost %></td>
     <td><%= raw(item.description) %></td>
     <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
     <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
   </tr>
 <% end %>
 </table>
-
+-->
 <br />
+<p>
 
-<%= link_to 'New Item', new_item_path %>
+</p>
+</div>
